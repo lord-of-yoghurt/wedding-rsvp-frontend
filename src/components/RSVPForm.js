@@ -32,6 +32,11 @@ class RSVPForm extends Component {
     this.setState(() => ({ email }));
   };
 
+  onAllergiesChange = (e) => {
+    const allergies = e.target.value;
+    this.setState(() => ({ allergies }));
+  };
+
   onSubmitForm = (e) => {
     e.preventDefault();
 
@@ -58,6 +63,13 @@ class RSVPForm extends Component {
           placeholder="Email address"
           onChange={this.onEmailChange}
         />
+        <br></br>
+        <textarea
+          placeholder="Allergies? Food restrictions? List them here!"
+          onChange={this.onAllergiesChange}
+        >
+        </textarea>
+        <br></br>
         <button>Submit</button>
       </form>
     );
