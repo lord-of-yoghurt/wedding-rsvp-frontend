@@ -12,7 +12,7 @@ class RSVPForm extends Component {
       email: '',
       allergies: '',
       additionalGuests: [''],
-      attending: true,
+      attending: 'yes',
       mealPreference: '',
       notes: '',
       error: ''
@@ -65,6 +65,12 @@ class RSVPForm extends Component {
     });
   };
 
+  onAttendChange = (e) => {
+    this.setState({
+      attending: e.target.value
+    });
+  };
+
   onSubmitForm = (e) => {
     e.preventDefault();
 
@@ -112,7 +118,25 @@ class RSVPForm extends Component {
           <button type="button" onClick={this.handleAddGuest}>Add Guest</button>
         </div>
         <div>
-
+          <label>
+            <input
+              type="radio"
+              value="yes"
+              checked={this.state.attending === 'yes'}
+              onChange={this.onAttendChange}
+            />
+            I am attending! :)
+          </label>
+          <br />
+          <label>
+            <input
+              type="radio"
+              value="no"
+              checked={this.state.attending === 'no'}
+              onChange={this.onAttendChange}
+            />
+            I am square. :(
+          </label>
         </div>
         <button>Submit</button>
       </form>
