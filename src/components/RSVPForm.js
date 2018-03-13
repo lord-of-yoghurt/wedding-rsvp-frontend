@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import AddGuestField from './AddGuestField';
+
 class RSVPForm extends Component {
   constructor(props) {
     super(props);
@@ -9,13 +11,15 @@ class RSVPForm extends Component {
       lastName: '',
       email: '',
       allergies: '',
-      additionalGuests: [],
-      attending: false,
+      additionalGuests: [''],
+      attending: true,
       mealPreference: '',
       notes: '',
       error: ''
     };
-  }
+
+    this.initialState = this.state;
+  };
 
   onFirstNameChange = (e) => {
     const firstName = e.target.value;
@@ -32,6 +36,35 @@ class RSVPForm extends Component {
     this.setState(() => ({ email }));
   };
 
+  onAllergiesChange = (e) => {
+    const allergies = e.target.value;
+    this.setState(() => ({ allergies }));
+  };
+
+  onGuestNameChange = (idx) => (e) => {
+    const newGuests = this.state.additionalGuests.map((g, gIdx) => {
+      if (idx !== gIdx) return g;
+
+      return e.target.value;
+    });
+
+    this.setState({ additionalGuests: newGuests });
+  };
+
+  handleAddGuest = () => {
+    this.setState({
+      additionalGuests: [...this.state.additionalGuests, '']
+    });
+  };
+
+  handleDeleteGuest = (idx) => () => {
+    this.setState({
+      additionalGuests: this.state.additionalGuests.filter((g, guestIdx) => {
+        return idx !== guestIdx;
+      })
+    });
+  };
+
   onSubmitForm = (e) => {
     e.preventDefault();
 
@@ -42,26 +75,49 @@ class RSVPForm extends Component {
     return (
       <form onSubmit={this.onSubmitForm}>
         {this.state.error && <p>{this.state.error}</p>}
-        <input
-          type="text"
-          placeholder="First name"
-          autoFocus
-          onChange={this.onFirstNameChange}
-        />
-        <input
-          type="text"
-          placeholder="Last name"
-          onChange={this.onLastNameChange}
-        />
-        <input
-          type="text"
-          placeholder="Email address"
-          onChange={this.onEmailChange}
-        />
+        <div>
+          <input
+            type="text"
+            placeholder="First name"
+            autoFocus
+            onChange={this.onFirstNameChange}
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            onChange={this.onLastNameChange}
+          />
+          <input
+            type="text"
+            placeholder="Email address"
+            onChange={this.onEmailChange}
+          />
+          <textarea
+            placeholder="Allergies? Food restrictions? List them here!"
+            onChange={this.onAllergiesChange}
+          ></textarea>
+        </div>
+        <div>
+          <p>Additional Guests</p>
+          <div>
+            {this.state.additionalGuests.map((guest, idx) => {
+              return <AddGuestField
+                key={idx + 1}
+                index={idx + 1}
+                handleChange={this.onGuestNameChange(idx)}
+                deleteGuest={this.handleDeleteGuest(idx)}
+              />
+            })}
+          </div>
+          <button type="button" onClick={this.handleAddGuest}>Add Guest</button>
+        </div>
+        <div>
+
+        </div>
         <button>Submit</button>
       </form>
     );
   };
-}
+};
 
 export default RSVPForm;
