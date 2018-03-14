@@ -17,8 +17,6 @@ class RSVPForm extends Component {
       notes: '',
       error: ''
     };
-
-    this.initialState = this.state;
   };
 
   onFirstNameChange = (e) => {
@@ -48,7 +46,7 @@ class RSVPForm extends Component {
       return e.target.value;
     });
 
-    this.setState({ additionalGuests: newGuests });
+    this.setState(() => ({ additionalGuests: newGuests }));
   };
 
   handleAddGuest = () => {
@@ -71,10 +69,37 @@ class RSVPForm extends Component {
     });
   };
 
+  onNotesChange = (e) => {
+    const notes = e.target.value;
+
+    this.setState({ notes });
+  };
+
+  clearForm = () => {
+    this.setState(() => ({
+      firstName: '',
+      lastName: '',
+      email: '',
+      allergies: '',
+      additionalGuests: [''],
+      notes: ''
+    }));
+  };
+
   onSubmitForm = (e) => {
     e.preventDefault();
 
-    console.log(this.state);
+    const { firstName, lastName, email } = this.state;
+
+    if (!firstName || !lastName || !email) {
+      this.setState(() => ({
+        error: 'Full name and email are required!'
+      }));
+    } else {
+      this.setState({ error: '' });
+      this.props.onSubmit(this.state);
+      this.clearForm();
+    }
   };
 
   render() {
@@ -137,6 +162,13 @@ class RSVPForm extends Component {
             />
             I am square. :(
           </label>
+        </div>
+        <div>
+          <textarea
+            placeholder="Any additional notes? Songs you want to dance to?"
+            onChange={this.onNotesChange}
+          >
+          </textarea>
         </div>
         <button>Submit</button>
       </form>

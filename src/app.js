@@ -11,6 +11,6 @@ import './styles/styles.scss';
 
 // component imports
 import LoadingPage from './components/LoadingPage';
-import Dashboard from './components/Dashboard';
+import HomePage from './components/HomePage';
 
 ReactDOM.render(<AppRouter />, document.getElementById('app'));
