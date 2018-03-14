@@ -9,6 +9,7 @@ class RSVPForm extends Component {
     this.state = {
       firstName: '',
       lastName: '',
+      printedName: '',
       email: '',
       allergies: '',
       additionalGuests: [''],
@@ -27,6 +28,11 @@ class RSVPForm extends Component {
   onLastNameChange = (e) => {
     const lastName = e.target.value;
     this.setState(() => ({ lastName }));
+  };
+
+  onPrintNameChange = (e) => {
+    const printedName = e.target.value;
+    this.setState(() => ({ printedName }));
   };
 
   onEmailChange = (e) => {
@@ -79,6 +85,7 @@ class RSVPForm extends Component {
     this.setState(() => ({
       firstName: '',
       lastName: '',
+      printedName: '',
       email: '',
       allergies: '',
       additionalGuests: [''],
@@ -107,26 +114,39 @@ class RSVPForm extends Component {
       <form onSubmit={this.onSubmitForm}>
         {this.state.error && <p>{this.state.error}</p>}
         <div>
-          <input
-            type="text"
-            placeholder="First name"
-            autoFocus
-            onChange={this.onFirstNameChange}
-          />
-          <input
-            type="text"
-            placeholder="Last name"
-            onChange={this.onLastNameChange}
-          />
-          <input
-            type="text"
-            placeholder="Email address"
-            onChange={this.onEmailChange}
-          />
-          <textarea
-            placeholder="Allergies? Food restrictions? List them here!"
-            onChange={this.onAllergiesChange}
-          ></textarea>
+          <div>
+            <input
+              type="text"
+              placeholder="First name"
+              autoFocus
+              onChange={this.onFirstNameChange}
+            />
+            <input
+              type="text"
+              placeholder="Last name"
+              onChange={this.onLastNameChange}
+            />
+          </div>
+          <div>
+            <p>Optional: full name to be displayed
+              on the table card, if different from above</p>
+            <input
+              type="text"
+              placeholder="Printed name"
+              onChange={this.onPrintNameChange}
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              placeholder="Email address"
+              onChange={this.onEmailChange}
+            />
+            <textarea
+              placeholder="Allergies? Food restrictions? List them here!"
+              onChange={this.onAllergiesChange}
+            ></textarea>
+          </div>
         </div>
         <div>
           <p>Additional Guests</p>
