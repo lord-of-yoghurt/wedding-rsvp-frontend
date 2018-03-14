@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => (
   <div>
-    <p>This is the dashboard.</p>
-    <Link to="/rsvp">RSVP!</Link>
+    <h1>Haodong and David are getting married!</h1>
+    <p>Join the party! <Link to="/rsvp">RSVP</Link></p>
   </div>
 );
 
