@@ -1,11 +1,80 @@
+.box-layout {
+  align-items: center;
+  background: url('/images/wed-pic-3.jpg');
+  background-size: cover;
+  display: flex;
+  height: 100vh; // vh is viewport height
+  justify-content: center;
+  width: 100vw; // viewport width
+}
+
+.box-layout__box {
+  background: fade-out(#e8e8e8, .12);
+  border-radius: 6px;
+  padding: $m-size;
+  // text-align: center;
+  width: 60rem;
+}
+
+.box-title__box p {
+  margin: 0 0 $m-size 0;
+}
+
+.box-layout__img {
+  max-width: 100%;
+}
+
+.box-layout__title {
+  margin: 0 0 $m-size 0;
+  line-height: 1;
+}
+
+.box-title__box {
+  display: flex;
+  margin: $l-size 0;
+}
+
 .box-title {
-  font-size: $font-size-xlarge;
-  font-family: 'Sacramento', sans-serif;
+  font-size: $font-size-xxlarge;
+  font-family: 'Satisfy', sans-serif;
   line-height: $l-size;
   margin: 0 0 $xl-size 0;
 }
 
 .box-subtitle {
-  text-align: right;
+  font-family: 'Satisfy', sans-serif;
+  font-size: $font-size-xlarge;
+  text-align: center;
+  line-height: 4rem;
   margin-bottom: $l-size;
+}
+
+.box-title--left, .box-title--right {
+  margin: $s-size 0;
+  padding: 0;
+}
+
+.box-title--right {
+  text-align: right;
+}
+
+.box-title--right {
+  margin-bottom: $l-size;
+}
+
+.box-title__left-section {
+  flex: 1;
+  border-right: 1px solid $dark-gray;
+  padding-right: $m-size;
+  text-align: center;
+}
+
+.box-title__right-section {
+  flex: 1;
+  padding-left: $m-size;
+  text-align: center;
+}
+
+.box-title__right-section > p {
+  text-align: justify;
 }

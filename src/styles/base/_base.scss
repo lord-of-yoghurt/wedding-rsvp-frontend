@@ -29,6 +29,10 @@ input, textarea, select {
   outline: none;
 }
 
+h3 {
+  margin-top: $s-size;
+}
+
 .is-active {
   font-weight: bold;
 }

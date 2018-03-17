@@ -160,7 +160,7 @@ class RSVPForm extends Component {
                 checked={this.state.attending === 'no'}
                 onChange={this.onAttendChange}
               />
-              I can't make it... <i className="em em-frowning"></i>
+              I can't make it. <i className="em em-frowning"></i>
             </label>
           </div>
 
