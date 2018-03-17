@@ -17,7 +17,7 @@ export default class RSVP extends Component {
     return (
       <div className="form-container">
         <div className="form-container--left"><RSVPForm onSubmit={this.onSubmit} /></div>
-        <div className="form-container--right"><img src="/images/wed-pic-1.jpg"/></div>
+        <div className="form-container--right"></div>
       </div>
     );
   }
