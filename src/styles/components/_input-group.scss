@@ -4,8 +4,9 @@
   flex-direction: column;
 
   @media (min-width: $desktop-breakpoint) {
-    flex-direction: row;
+    flex-direction: column;
     margin-bottom: $l-size;
+    align-items: stretch;
   }
 }
 
@@ -13,6 +14,14 @@
   margin-bottom: $s-size;
 
   @media (min-width: $desktop-breakpoint) {
-    margin: 0 $s-size 0 0;
+    margin-bottom: $s-size;
+    flex: 1;
   }
+}
+
+.input-group__label {
+  font-size: $font-size-small;
+  padding-left: $xs-size;
+  font-style: italic;
+  padding-bottom: $xs-size;
 }

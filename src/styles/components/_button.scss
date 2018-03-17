@@ -3,15 +3,22 @@
   border: none;
   color: white;
   display: inline-block;
-  font-family: 'Roboto', sans-serif;
   font-size: $font-size-large;
   line-height: 1;
   padding: $s-size;
   text-decoration: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 .app-button--link {
   background: none;
+}
+
+.app-button--wide {
+  display: block;
+  width: 100%;
 }
 
 .app-button--form {
@@ -19,5 +26,10 @@
 }
 
 .app-button--remove {
-  background-color: #888888;
+  background-color: #aeaea6;
+}
+
+.app-button--submit {
+  @extend .app-button--wide;
+  background-color: $dark-blue;
 }

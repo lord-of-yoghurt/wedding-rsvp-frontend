@@ -1,0 +1,19 @@
+.add-guest-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $l-size;
+}
+
+.add-guest-box {
+  display: flex;
+  margin-bottom: $xs-size;
+}
+
+.add-guest-box__input {
+  flex: 1 0 8em;
+  margin-right: $xs-size;
+}
+
+.add-guest-box__btn {
+  flex: 0 0 auto;
+}

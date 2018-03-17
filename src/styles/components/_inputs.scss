@@ -5,6 +5,9 @@
   font-size: $font-size-large;
   font-weight: 300;
   outline: none;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
 }
 
 .select {
@@ -13,5 +16,6 @@
 
 .textarea {
   @extend .text-input;
-  height: 10rem;
+  height: 12rem;
+  resize: none;
 }

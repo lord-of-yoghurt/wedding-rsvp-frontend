@@ -1,0 +1,16 @@
+.radio-box {
+  background-color: White;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  border: 1px solid #cacccd;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+  justify-content: space-around;
+  margin-bottom: $l-size;
+}
+
+.radio-box__btn {
+  margin-right: 1rem;
+}

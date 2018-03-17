@@ -9,13 +9,14 @@ html {
 
 body {
   color: $dark-gray;
-  font-family: 'Verdana', 'Arial', sans-serif;
+  font-family: 'Lato', 'Arial', sans-serif;
   font-size: $m-size;
   line-height: 1.6;
 }
 
 button {
   cursor: pointer;
+  font-family: 'Nunito', sans-serif;
   outline: none;
 }
 
@@ -24,6 +25,7 @@ button:disabled {
 }
 
 input, textarea, select {
+  font-family: 'Lato', sans-serif;
   outline: none;
 }
 
