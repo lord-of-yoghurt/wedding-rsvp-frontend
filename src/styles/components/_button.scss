@@ -1,5 +1,5 @@
 .app-button {
-  background-color: $button-blue;
+  background-color: #aeaea6;
   border: none;
   color: white;
   display: inline-block;
@@ -10,10 +10,12 @@
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
+  height: 50px;
 }
 
 .app-button--link {
-  background: none;
+  background-color: #aeaea6;
+  text-align: center;
 }
 
 .app-button--wide {
@@ -26,7 +28,7 @@
 }
 
 .app-button--remove {
-  background-color: #aeaea6;
+  background-color: #ccaaa2;
 }
 
 .app-button--submit {

@@ -5,7 +5,11 @@
 .form-container--left {
   background-color: #d9d9d9;
   flex: 1;
-  margin-bottom: 6px;
+  margin-bottom: none;
+
+  @media (min-width: $desktop-breakpoint) {
+    margin-bottom: 6px;
+  }
 }
 
 .form-container--right {
@@ -25,4 +29,8 @@
     display: inline;
     max-width: 100%;
   }
+}
+
+.form-container--hide {
+  display: none;
 }
