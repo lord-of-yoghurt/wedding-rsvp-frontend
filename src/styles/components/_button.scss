@@ -1,5 +1,4 @@
 .app-button {
-  background-color: $button-blue;
   border: none;
   color: white;
   display: inline-block;
@@ -13,7 +12,8 @@
 }
 
 .app-button--link {
-  background: none;
+  background-color: #aeaea6;
+  text-align: center;
 }
 
 .app-button--wide {
