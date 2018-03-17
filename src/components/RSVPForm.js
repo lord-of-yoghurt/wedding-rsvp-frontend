@@ -112,7 +112,6 @@ class RSVPForm extends Component {
   render() {
     return (
       <form onSubmit={this.onSubmitForm}>
-        {this.state.error && <p>{this.state.error}</p>}
         <div className="content-container">
           <div className="input-group">
             <input
@@ -135,6 +134,7 @@ class RSVPForm extends Component {
               onChange={this.onEmailChange}
             />
           </div>
+          {this.state.error && <div className="form__error">{this.state.error}</div>}
           <div className="radio-box">
             <label>
               <input
