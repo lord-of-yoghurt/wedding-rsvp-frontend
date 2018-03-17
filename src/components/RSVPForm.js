@@ -113,44 +113,75 @@ class RSVPForm extends Component {
     return (
       <form onSubmit={this.onSubmitForm}>
         {this.state.error && <p>{this.state.error}</p>}
-        <div>
-          <div>
+        <div className="content-container">
+          <div className="input-group">
             <input
+              className="input-group__item text-input"
               type="text"
               placeholder="First name"
               autoFocus
               onChange={this.onFirstNameChange}
             />
             <input
+              className="input-group__item text-input"
               type="text"
               placeholder="Last name"
               onChange={this.onLastNameChange}
             />
-          </div>
-          <div>
-            <p>Optional: full name to be displayed
-              on the table card, if different from above</p>
             <input
+              className="input-group__item text-input"
+              type="email"
+              placeholder="Email address"
+              onChange={this.onEmailChange}
+            />
+          </div>
+          <div className="radio-box">
+            <label>
+              <input
+                className="radio-box__btn"
+                type="radio"
+                value="yes"
+                checked={this.state.attending === 'yes'}
+                onChange={this.onAttendChange}
+              />
+              I will be there! <i class="em em-grinning_face_with_star_eyes"></i>
+            </label>
+            <br />
+            <label>
+              <input
+                className="radio-box__btn"
+                type="radio"
+                value="no"
+                checked={this.state.attending === 'no'}
+                onChange={this.onAttendChange}
+              />
+              I can't make it... <i class="em em-frowning"></i>
+            </label>
+          </div>
+          <div className="input-group">
+            <label className="input-group__label">
+              Optional: full name to be displayed
+              on the table card, if different from above
+            </label>
+            <input
+              className="input-group__item text-input"
               type="text"
               placeholder="Printed name"
               onChange={this.onPrintNameChange}
             />
           </div>
-          <div>
-            <input
-              type="text"
-              placeholder="Email address"
-              onChange={this.onEmailChange}
-            />
+          <div className="input-group">
             <textarea
+              className="textarea"
               placeholder="Allergies? Food restrictions? List them here!"
               onChange={this.onAllergiesChange}
             ></textarea>
           </div>
-        </div>
-        <div>
-          <p>Additional Guests</p>
-          <div>
+          <div className="add-guest-container">
+            <label className="input-group__label">
+              Additional Guests
+            </label>
+
             {this.state.additionalGuests.map((guest, idx) => {
               return <AddGuestField
                 key={idx + 1}
@@ -159,38 +190,28 @@ class RSVPForm extends Component {
                 deleteGuest={this.handleDeleteGuest(idx)}
               />
             })}
+
+            <button
+              type="button"
+              className="app-button app-button--wide"
+              onClick={this.handleAddGuest}
+            >
+              Add Guest
+            </button>
           </div>
-          <button type="button" onClick={this.handleAddGuest}>Add Guest</button>
+          <div className="input-group">
+            <textarea
+              className="textarea"
+              placeholder="Any additional notes? Songs you want to dance to?"
+              onChange={this.onNotesChange}
+            >
+            </textarea>
+          </div>
+          <button className="app-button app-button--submit">
+            Submit
+          </button>
         </div>
-        <div>
-          <label>
-            <input
-              type="radio"
-              value="yes"
-              checked={this.state.attending === 'yes'}
-              onChange={this.onAttendChange}
-            />
-            I am attending! :)
-          </label>
-          <br />
-          <label>
-            <input
-              type="radio"
-              value="no"
-              checked={this.state.attending === 'no'}
-              onChange={this.onAttendChange}
-            />
-            I am square. :(
-          </label>
-        </div>
-        <div>
-          <textarea
-            placeholder="Any additional notes? Songs you want to dance to?"
-            onChange={this.onNotesChange}
-          >
-          </textarea>
-        </div>
-        <button>Submit</button>
+
       </form>
     );
   };

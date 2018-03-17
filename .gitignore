@@ -3,7 +3,7 @@
 /package-lock.json
 /public/dist/
 
-/.DS_Store
+**/.DS_Store
 
 /.env
 /.env.test
