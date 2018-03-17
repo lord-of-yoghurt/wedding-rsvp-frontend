@@ -1,9 +1,12 @@
-.form-container {
-  display: flex;
+.form-wrapper {
   background: url('/images/wed-pic-4.jpg');
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
+  height: 150vh;
+}
+
+.form-container {
+  display: flex;
+  min-height: 100%;
 }
 
 .form-container--left {

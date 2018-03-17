@@ -15,9 +15,11 @@ export default class RSVP extends Component {
 
   render() {
     return (
-      <div className="form-container">
-        <div className="form-container--left"><RSVPForm onSubmit={this.onSubmit} /></div>
-        <div className="form-container--right"></div>
+      <div className="form-wrapper">
+        <div className="form-container">
+          <div className="form-container--left"><RSVPForm onSubmit={this.onSubmit} /></div>
+          <div className="form-container--right"></div>
+        </div>
       </div>
     );
   }
