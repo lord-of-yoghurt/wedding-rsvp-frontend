@@ -1,14 +1,21 @@
 .radio-box {
   background-color: White;
-  height: 8rem;
+  height: 15rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
   border: 1px solid #cacccd;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
-  justify-content: space-around;
   margin-bottom: $l-size;
+  padding: $l-size 0;
+
+  @media (min-width: $desktop-breakpoint) {
+    justify-content: space-around;
+    flex-direction: row;
+    height: 8rem;
+  }
 }
 
 .radio-box__btn {

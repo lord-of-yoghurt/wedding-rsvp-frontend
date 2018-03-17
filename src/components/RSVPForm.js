@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 import AddGuestField from './AddGuestField';
 
@@ -16,7 +17,8 @@ class RSVPForm extends Component {
       attending: 'yes',
       mealPreference: '',
       notes: '',
-      error: ''
+      error: '',
+      infoFieldsClass: ''
     };
   };
 
@@ -69,10 +71,13 @@ class RSVPForm extends Component {
     });
   };
 
-  onAttendChange = (e) => {
-    this.setState({
-      attending: e.target.value
-    });
+  onAttendChange = () => {
+    // e.persist();
+
+    this.setState((prevState) => ({
+      attending: prevState.attending === 'yes' ? 'no' : 'yes',
+      infoFieldsClass: prevState.infoFieldsClass === '' ? 'form-container--hide' : ''
+    }));
   };
 
   onNotesChange = (e) => {
@@ -144,7 +149,7 @@ class RSVPForm extends Component {
                 checked={this.state.attending === 'yes'}
                 onChange={this.onAttendChange}
               />
-              I will be there! <i class="em em-grinning_face_with_star_eyes"></i>
+              I will be there! <i className="em em-grinning_face_with_star_eyes"></i>
             </label>
             <br />
             <label>
@@ -155,58 +160,64 @@ class RSVPForm extends Component {
                 checked={this.state.attending === 'no'}
                 onChange={this.onAttendChange}
               />
-              I can't make it... <i class="em em-frowning"></i>
+              I can't make it... <i className="em em-frowning"></i>
             </label>
           </div>
-          <div className="input-group">
-            <label className="input-group__label">
-              Optional: full name to be displayed
-              on the table card, if different from above
-            </label>
-            <input
-              className="input-group__item text-input"
-              type="text"
-              placeholder="Printed name"
-              onChange={this.onPrintNameChange}
-            />
-          </div>
-          <div className="input-group">
-            <textarea
-              className="textarea"
-              placeholder="Allergies? Food restrictions? List them here!"
-              onChange={this.onAllergiesChange}
-            ></textarea>
-          </div>
-          <div className="add-guest-container">
-            <label className="input-group__label">
-              Additional Guests
-            </label>
 
-            {this.state.additionalGuests.map((guest, idx) => {
-              return <AddGuestField
-                key={idx + 1}
-                index={idx + 1}
-                handleChange={this.onGuestNameChange(idx)}
-                deleteGuest={this.handleDeleteGuest(idx)}
+          {/* ******************* */}
+
+          <div className={this.state.infoFieldsClass}>
+            <div className="input-group">
+              <label className="input-group__label">
+                Optional: full name to be displayed
+                on the table card, if different from above
+              </label>
+              <input
+                className="input-group__item text-input"
+                type="text"
+                placeholder="Printed name"
+                onChange={this.onPrintNameChange}
               />
-            })}
+            </div>
+            <div className="input-group">
+              <textarea
+                className="textarea"
+                placeholder="Allergies? Food restrictions? List them here!"
+                onChange={this.onAllergiesChange}
+              ></textarea>
+            </div>
+            <div className="add-guest-container">
+              <label className="input-group__label">
+                Additional Guests
+              </label>
 
-            <button
-              type="button"
-              className="app-button app-button--wide"
-              onClick={this.handleAddGuest}
-            >
-              Add Guest
-            </button>
+              {this.state.additionalGuests.map((guest, idx) => {
+                return <AddGuestField
+                  key={idx + 1}
+                  index={idx + 1}
+                  handleChange={this.onGuestNameChange(idx)}
+                  deleteGuest={this.handleDeleteGuest(idx)}
+                />
+              })}
+
+              <button
+                type="button"
+                className="app-button app-button--wide"
+                onClick={this.handleAddGuest}
+              >
+                Add Guest
+              </button>
+            </div>
+            <div className="input-group">
+              <textarea
+                className="textarea"
+                placeholder="Any additional notes? Songs you want to dance to?"
+                onChange={this.onNotesChange}
+              >
+              </textarea>
+            </div>
           </div>
-          <div className="input-group">
-            <textarea
-              className="textarea"
-              placeholder="Any additional notes? Songs you want to dance to?"
-              onChange={this.onNotesChange}
-            >
-            </textarea>
-          </div>
+
           <button className="app-button app-button--submit">
             Submit
           </button>
