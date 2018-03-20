@@ -10,21 +10,20 @@ const HomePage = () => (
         <div className="box-title__left-section">
           <h3>When</h3>
           <p>Friday, September 21, 2018</p>
-          <p>Ceremony starts at 5:00 p.m.</p>
+          <p>Ceremony starts at 5:00 p.m.</p> {/* TODO: add detailed schedule */}
           <img className="box-layout__img" src="/images/divider-1_2.png" />
           <h3>Where</h3>
           <p>The Views at Mt. Fuji</p>
-          <p>296 NY-17, Hillburn, NY 10931</p>
+          <p>296 Old Route 17, Hillburn, NY 10931</p>
         </div>
         <div className="box-title__right-section">
           <h3>Info and Updates</h3>
           <p>
-            Detailed directions can be found <a href="http://www.theviewsatmtfuji.com/contact/">here</a>,
-            below contact info.
+            Detailed directions can be found <a href="https://goo.gl/JPTVCZ">here</a>.
           </p>
           <p></p>
           <p>
-            Menu options will be added to the RSVP form in early April.
+            Menu options and registry info will be made available in early April.
           </p>
         </div>
       </div>
