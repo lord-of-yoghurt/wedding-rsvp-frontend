@@ -1,0 +1,30 @@
+.thankyou-wrapper {
+  background: url('/images/wed-pic-5.jpg');
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.thankyou-container {
+  background-color: fade-out(#aeaea6, .12);
+  margin-top: $xl-size;
+  max-width: 80rem;
+  padding: $l-size;
+  border-radius: 6px;
+}
+
+.thankyou-container h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.thankyou-paragraph {
+  text-align: justify;
+}
+
+.thankyou-links {
+  margin: 0;
+  text-align: center;
+}
