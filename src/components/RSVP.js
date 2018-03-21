@@ -13,11 +13,16 @@ export default class RSVP extends Component {
       .catch((e) => console.log(e))
   };
 
+  onSubmitTemp = (data) => {
+    console.log(data);
+    this.props.history.push('/thankyou', { attending: data.attending });
+  };
+
   render() {
     return (
       <div className="form-wrapper">
         <div className="form-container">
-          <div className="form-container--left"><RSVPForm onSubmit={this.onSubmit} /></div>
+          <div className="form-container--left"><RSVPForm onSubmit={this.onSubmitTemp} /></div>
           <div className="form-container--right"></div>
         </div>
       </div>
