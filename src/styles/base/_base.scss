@@ -33,6 +33,15 @@ h3 {
   margin-top: $s-size;
 }
 
+a {
+  color: $button-blue;
+  text-decoration: none;
+}
+
+// a:hover {
+//   color: darken($button-blue, 10%);
+// }
+
 .is-active {
   font-weight: bold;
 }

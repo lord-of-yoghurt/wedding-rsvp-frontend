@@ -3,21 +3,25 @@
   background: url('/images/wed-pic-3.jpg');
   background-size: cover;
   display: flex;
-  height: 100vh; // vh is viewport height
+  height: 100%;
   justify-content: center;
-  width: 100vw; // viewport width
+  width: 100vw;
+
+  @media (min-width: $desktop-breakpoint) {
+    height: 100vh;
+  }
 }
 
 .box-layout__box {
   background: fade-out(#e8e8e8, .12);
   border-radius: 6px;
-  padding: $m-size;
+  padding: $l-size;
   // text-align: center;
   width: 60rem;
-  margin-top: $xl-size;
+  margin: $xl-size $m-size;
 
   @media (min-width: $desktop-breakpoint) {
-    margin-top: 0;
+    margin: 0;
   }
 }
 
@@ -40,10 +44,14 @@
 }
 
 .box-title {
-  font-size: $font-size-xxlarge;
+  font-size: $font-size-xxlarge-mobile;
   font-family: 'Satisfy', sans-serif;
   line-height: $l-size;
   margin: 0 0 $xl-size 0;
+
+  @media(min-width: $desktop-breakpoint) {
+    font-size: $font-size-xxlarge;
+  }
 }
 
 .box-subtitle {

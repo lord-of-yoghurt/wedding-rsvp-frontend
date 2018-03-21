@@ -8,7 +8,7 @@ export default class RSVP extends Component {
     axios.post(`${process.env.BASE_URL}responses`, data)
       .then((res) => {
         console.log(res.data);
-        this.props.history.push('/');
+        this.props.history.push('/thankyou', { attending: data.attending });
       })
       .catch((e) => console.log(e))
   };
