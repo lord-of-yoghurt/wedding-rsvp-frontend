@@ -19,7 +19,7 @@ const HomePage = () => (
         <div className="box-title__right-section">
           <h3>Info and Updates</h3>
           <p>
-            Detailed directions can be found <a href="https://goo.gl/JPTVCZ">here</a>.
+            Detailed directions are available <a href="https://goo.gl/JPTVCZ">here</a>.
           </p>
           <p></p>
           <p>
