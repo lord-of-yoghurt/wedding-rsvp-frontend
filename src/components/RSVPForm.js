@@ -101,19 +101,17 @@ class RSVPForm extends Component {
   onSubmitForm = (e) => {
     e.preventDefault();
 
-    // const { firstName, lastName, email } = this.state;
-    //
-    // if (!firstName || !lastName || !email) {
-    //   this.setState(() => ({
-    //     error: 'Full name and email are required!'
-    //   }));
-    // } else {
-    //   this.setState({ error: '' });
-    //   this.props.onSubmit(this.state);
-    //   this.clearForm();
-    // }
+    const { firstName, lastName, email } = this.state;
 
-    this.props.onSubmit(this.state);
+    if (!firstName || !lastName || !email) {
+      this.setState(() => ({
+        error: 'Full name and email are required!'
+      }));
+    } else {
+      this.setState({ error: '' });
+      this.props.onSubmit(this.state);
+      this.clearForm();
+    }
   };
 
   render() {
