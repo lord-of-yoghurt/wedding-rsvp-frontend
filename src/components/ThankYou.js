@@ -16,11 +16,16 @@ const ThankYou = (props) => {
       <div className="thankyou-container animated fadeInDown">
         <h2>Thank you, {props.location.state.firstName}!</h2>
         {attending === 'yes' &&
-          <p className="thankyou-paragraph">
-            We are so excited to see you at our wedding! Please check back for
-            detailed schedule and updated registry information. We will send out
-            a notification once there are updates.
-          </p>
+          <div>
+            <p className="thankyou-paragraph">
+              We are so excited to see you at our wedding!
+            </p>
+            <p className="thankyou-paragraph">
+              Please check back for menu options
+              and registry information. We will send out
+              a notification once there are updates.
+            </p>
+          </div>
         }
         {attending === 'no' &&
           <p className="thankyou-paragraph">
