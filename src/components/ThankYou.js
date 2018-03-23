@@ -14,7 +14,7 @@ const ThankYou = (props) => {
   return (
     <div className="thankyou-wrapper">
       <div className="thankyou-container animated fadeInDown">
-        <h2>Thank you!</h2>
+        <h2>Thank you, {props.location.state.firstName}!</h2>
         {attending === 'yes' &&
           <p className="thankyou-paragraph">
             We are so excited to see you at our wedding! Please check back for
@@ -24,7 +24,9 @@ const ThankYou = (props) => {
         }
         {attending === 'no' &&
           <p className="thankyou-paragraph">
-            We are sorry to hear that you are not available.
+            We are sorry to hear that you are not available, and we will miss you!
+            <br />
+            Thank you for letting us know.
           </p>
         }
         <p className="thankyou-links">

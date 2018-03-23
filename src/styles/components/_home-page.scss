@@ -2,14 +2,15 @@
   align-items: center;
   background: url('/images/wed-pic-3.jpg');
   background-size: cover;
+  background-attachment: fixed;
   display: flex;
   height: 100%;
   justify-content: center;
   width: 100vw;
 
-  @media (min-width: $desktop-breakpoint) {
-    height: 100vh;
-  }
+  // @media (min-width: $desktop-breakpoint) {
+  //   height: 100vh;
+  // }
 }
 
 .box-layout__box {
@@ -21,7 +22,7 @@
   margin: $xl-size $m-size;
 
   @media (min-width: $desktop-breakpoint) {
-    margin: 0;
+    margin: $xl-size 0;
   }
 }
 
@@ -41,6 +42,11 @@
 .box-title__box {
   display: flex;
   margin: $l-size 0;
+  flex-direction: column;
+
+  @media(min-width: $desktop-breakpoint) {
+    flex-direction: row;
+  }
 }
 
 .box-title {
@@ -77,15 +83,24 @@
 
 .box-title__left-section {
   flex: 1;
-  border-right: 1px solid $dark-gray;
-  padding-right: $m-size;
+  border: none;
+  padding: none;
   text-align: center;
+
+  @media(min-width: $desktop-breakpoint) {
+    border-right: 1px solid $dark-gray;
+    padding-right: $m-size;
+  }
 }
 
 .box-title__right-section {
   flex: 1;
-  padding-left: $m-size;
+  padding: none;
   text-align: center;
+
+  @media(min-width: $desktop-breakpoint) {
+    padding-left: $m-size;
+  }
 }
 
 .box-title__right-section > p {

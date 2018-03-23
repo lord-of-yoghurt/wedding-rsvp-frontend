@@ -170,7 +170,10 @@ class RSVPForm extends Component {
             <div className="input-group">
               <label className="input-group__label">
                 Optional: full name to be displayed
-                on the table card, if different from above
+                on the table card, if different from above.
+                <br />
+                If you'd like to display your name in your
+                native language, feel free to enter it here!
               </label>
               <input
                 className="input-group__item text-input"
