@@ -13,7 +13,7 @@ const ThankYou = (props) => {
 
   return (
     <div className="thankyou-wrapper">
-      <div className="thankyou-container animated fadeInDown">
+      <div className={"thankyou-container animated " + (attending === 'yes' ? 'tada' : 'fadeInDown')}>
         <h2>Thank you, {props.location.state.firstName}!</h2>
         {attending === 'yes' &&
           <div>
