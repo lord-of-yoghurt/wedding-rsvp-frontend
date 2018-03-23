@@ -18,7 +18,7 @@ const HomePage = () => (
           <img className="box-layout__img" src="/images/divider-1_2.png" />
           <h3>Where</h3>
           <p>The Views at Mt. Fuji</p>
-          <p>296 Old Route 17, Hillburn, NY 10931</p>
+          <p>296 Old Route 17 <br />Hillburn, NY 10931</p>
         </div>
         <div className="box-title__right-section">
           <img className="box-layout__img show-for-mobile" src="/images/divider-1_2.png" />
