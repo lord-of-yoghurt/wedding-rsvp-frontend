@@ -17,8 +17,7 @@ class RSVPForm extends Component {
       attending: 'yes',
       mealPreference: '',
       notes: '',
-      error: '',
-      infoFieldsClass: ''
+      error: ''
     };
   };
 
@@ -72,11 +71,8 @@ class RSVPForm extends Component {
   };
 
   onAttendChange = () => {
-    // e.persist();
-
     this.setState((prevState) => ({
       attending: prevState.attending === 'yes' ? 'no' : 'yes',
-      infoFieldsClass: prevState.infoFieldsClass === '' ? 'form-container--hide' : ''
     }));
   };
 
@@ -166,60 +162,62 @@ class RSVPForm extends Component {
 
           {/* ******************* */}
 
-          <div className={this.state.infoFieldsClass}>
-            <div className="input-group">
-              <label className="input-group__label">
-                Optional: full name to be displayed
-                on the table card, if different from above.
-                <br />
-                If you'd like to display your name in your
-                native language, feel free to enter it here!
-              </label>
-              <input
-                className="input-group__item text-input"
-                type="text"
-                placeholder="Printed name"
-                onChange={this.onPrintNameChange}
-              />
-            </div>
-            <div className="input-group">
-              <textarea
-                className="textarea"
-                placeholder="Allergies? Food restrictions? List them here!"
-                onChange={this.onAllergiesChange}
-              ></textarea>
-            </div>
-            <div className="add-guest-container">
-              <label className="input-group__label">
-                Additional Guests
-              </label>
-
-              {this.state.additionalGuests.map((guest, idx) => {
-                return <AddGuestField
-                  key={idx + 1}
-                  index={idx + 1}
-                  handleChange={this.onGuestNameChange(idx)}
-                  deleteGuest={this.handleDeleteGuest(idx)}
+          {this.state.attending === 'yes' &&
+            <div>
+              <div className="input-group">
+                <label className="input-group__label">
+                  Optional: full name to be displayed
+                  on the table card, if different from above.
+                  <br />
+                  If you'd like to display your name in your
+                  native language, feel free to enter it here!
+                </label>
+                <input
+                  className="input-group__item text-input"
+                  type="text"
+                  placeholder="Printed name"
+                  onChange={this.onPrintNameChange}
                 />
-              })}
+              </div>
+              <div className="input-group">
+                <textarea
+                  className="textarea"
+                  placeholder="Allergies? Food restrictions? List them here!"
+                  onChange={this.onAllergiesChange}
+                ></textarea>
+              </div>
+              <div className="add-guest-container">
+                <label className="input-group__label">
+                  Additional Guests
+                </label>
 
-              <button
-                type="button"
-                className="app-button app-button--wide"
-                onClick={this.handleAddGuest}
-              >
-                Add Guest
-              </button>
+                {this.state.additionalGuests.map((guest, idx) => {
+                  return <AddGuestField
+                    key={idx + 1}
+                    index={idx + 1}
+                    handleChange={this.onGuestNameChange(idx)}
+                    deleteGuest={this.handleDeleteGuest(idx)}
+                  />
+                })}
+
+                <button
+                  type="button"
+                  className="app-button app-button--wide"
+                  onClick={this.handleAddGuest}
+                >
+                  Add Guest
+                </button>
+              </div>
+              <div className="input-group">
+                <textarea
+                  className="textarea"
+                  placeholder="Any additional notes? Songs you want to dance to?"
+                  onChange={this.onNotesChange}
+                >
+                </textarea>
+              </div>
             </div>
-            <div className="input-group">
-              <textarea
-                className="textarea"
-                placeholder="Any additional notes? Songs you want to dance to?"
-                onChange={this.onNotesChange}
-              >
-              </textarea>
-            </div>
-          </div>
+          }
 
           <button className="app-button app-button--submit">
             Submit
