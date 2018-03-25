@@ -24,7 +24,7 @@ const HomePage = () => (
           <img className="box-layout__img show-for-mobile" src="/images/divider-1_2.png" />
           <h3>Info and Updates</h3>
           <p>
-            Detailed directions are available <a href="https://goo.gl/JPTVCZ">here</a>.
+            Detailed directions are available <a target="_blank" href="https://goo.gl/JPTVCZ">here</a>.
           </p>
           <p></p>
           <p>
