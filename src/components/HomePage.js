@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => (
-  <div className="box-layout">
+  <div className="box-wrapper">
     <div className="box-layout__box animated fadeInDown">
       <p className="box-title box-title--left">Haodong and David</p>
       <p className="box-title box-title--right">are getting married!</p>
