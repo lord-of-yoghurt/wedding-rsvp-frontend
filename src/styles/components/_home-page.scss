@@ -4,8 +4,9 @@
   background-attachment: fixed;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-direction: column;
 
   @media(min-width: $desktop-breakpoint) {
     align-items: center;
@@ -16,7 +17,7 @@
   background: fade-out(#e8e8e8, .12);
   border-radius: 6px;
   padding: $l-size;
-  width: 60rem;
+  max-width: 60rem;
   margin: $xl-size $m-size;
 
   @media (min-width: $desktop-breakpoint) {
@@ -103,4 +104,23 @@
 
 .box-title__right-section > p {
   text-align: left;
+}
+
+.box__footer {
+  background: fade-out(#e8e8e8, .12);
+  width: 100%;
+  text-align: center;
+  height: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media(min-width: $desktop-breakpoint) {
+    height: 6rem;
+  }
+}
+
+.box__footer p {
+  margin: 0;
 }
