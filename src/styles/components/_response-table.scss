@@ -7,6 +7,10 @@
   border-collapse: collapse;
 }
 
+.response-table tbody *:hover {
+  background-color: #ccc;
+}
+
 .response-table td {
   border: 1px solid black;
   padding: 3px;

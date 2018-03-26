@@ -13,7 +13,7 @@ const Response = ({
     <td>{printedName}</td>
     <td>
       {
-        additionalGuests.length > 1 ?
+        additionalGuests[0] ?
         additionalGuests.length + 1 :
         additionalGuests.length
       }
