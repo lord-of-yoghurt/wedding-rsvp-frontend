@@ -51,7 +51,7 @@ module.exports = (env) => {
     plugins: [
       CSSExtract,
       new webpack.DefinePlugin({
-        'process.env.BACKEND_API_KEY': JSON.stringify(process.env.BACKEND_API_KEY),
+        'process.env.API_KEY': JSON.stringify(process.env.API_KEY),
         'process.env.BASE_URL': JSON.stringify(process.env.BASE_URL),
       }),
     ],
