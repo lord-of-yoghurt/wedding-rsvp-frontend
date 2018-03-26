@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+import ResponseTableHead from './ResponseTableHead';
+import Response from './Response';
 
 export default class AllResponses extends Component {
   constructor(props) {
@@ -31,14 +35,38 @@ export default class AllResponses extends Component {
       .catch((e) => console.log(e));
   };
 
+  renderTable() {
+    if (this.state.responses.length === 0) return null;
+
+    return (
+      <table className="response-table">
+        <ResponseTableHead />
+        <tbody>
+          {this.state.responses.map((r, idx) => {
+            return <Response
+              key={idx+1}
+              firstName={r.firstName}
+              lastName={r.lastName}
+              email={r.email}
+              attending={r.attending}
+              printedName={r.printedName}
+              additionalGuests={r.additionalGuests}
+              allergies={r.allergies}
+              mealPreference={r.mealPreference}
+              notes={r.notes}
+            />
+          })}
+        </tbody>
+      </table>
+    )
+  }
+
   render() {
     return (
-      <div>
+      <div className="table-container">
         {this.state.error && <p>{this.state.error}</p>}
-
-        {this.state.responses && this.state.responses.map((response) => {
-          return <p>{response.firstName}</p>;
-        })}
+        {this.renderTable()}
+        <Link to="/">Home</Link>
       </div>
     );
   }

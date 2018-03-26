@@ -1,0 +1,17 @@
+.table-container {
+  margin: $m-size;
+}
+
+.response-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.response-table td {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+.response-table thead {
+  text-align: left;
+}
