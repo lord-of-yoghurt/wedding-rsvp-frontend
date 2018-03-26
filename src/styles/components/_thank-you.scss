@@ -5,14 +5,22 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @media(min-width: $desktop-breakpoint) {
+    align-items: center;
+  }
 }
 
 .thankyou-container {
   background-color: fade-out(#aeaea6, .12);
-  margin-top: $xl-size;
-  max-width: 80rem;
+  margin: $l-size $l-size 0 $l-size;
+  max-width: 60rem;
   padding: $l-size;
   border-radius: 6px;
+
+  @media(min-width: $desktop-breakpoint) {
+    margin-top: 0;
+  }
 }
 
 .thankyou-container h2 {
@@ -21,7 +29,7 @@
 }
 
 .thankyou-paragraph {
-  text-align: justify;
+  text-align: center;
 }
 
 .thankyou-links {

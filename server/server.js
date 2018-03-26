@@ -6,6 +6,10 @@ const express = require('express'),
 
 app.use(express.static(publicPath));
 
+app.get('/wakemydyno.txt', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'wakemydyno.txt'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(publicPath, 'index.html'));
 });
