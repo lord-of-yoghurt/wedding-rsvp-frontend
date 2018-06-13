@@ -27,7 +27,15 @@ const GreetingBox = () => (
         </p>
         <p></p>
         <p>
-          Menu options and registry info will be made available soon.
+          The menu is now available! Click&nbsp;
+          <a target="_blank" href="https://goo.gl/4H5HRU">here</a>
+          &nbsp;to check it out.
+        </p>
+        <img className="box-layout__img" src="/images/divider-1_2.png" />
+        <p>
+          <a target="_blank" href="https://www.zola.com/registry/davidhaodong">
+            <img className="box-layout__img" src="/images/zola-logo-blue.png" />
+          </a>
         </p>
       </div>
     </div>
