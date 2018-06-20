@@ -1,0 +1,35 @@
+@import './home-page';
+
+.our-story__wrapper {
+  @extend .box-wrapper;
+  background: url('/images/wed-pic-6.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.our-story__box {
+  @extend .box-layout__box;
+  max-width: 80rem;
+  text-align: justify;
+}
+
+.our-story__title {
+  @extend .box-title;
+  margin-bottom: $l-size;
+  text-align: center;
+}
+
+.our-story__img--right {
+  width: 45rem;
+  float: right;
+  margin-left: $m-size;
+  margin-top: $xs-size;
+}
+
+.our-story__img--left {
+  @extend .box-layout__img;
+  width: 40rem;
+  float: left;
+  margin-right: $m-size;
+  margin-top: $xs-size;
+}

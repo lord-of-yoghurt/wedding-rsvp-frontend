@@ -6,6 +6,7 @@ const Footer = () => (
     <p>Photos: <a href="https://unsplash.com/@antonmislawsky">Anton Mislawsky</a>
       , <a href="https://unsplash.com/@itstamaramenzi">Tamara Menzi</a>
       , <br className="show-for-mobile" /><a href="https://unsplash.com/@tikkho">Tikkho Maciel</a>
+      , <a href="https://unsplash.com/@michaelfenton">Michael Fenton</a>
     </p>
   </footer>
 );
