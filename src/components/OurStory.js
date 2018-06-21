@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const OurStory = () => (
   <div className="our-story__wrapper">
@@ -23,6 +24,10 @@ const OurStory = () => (
       </p>
 
       <p>About 3 years into our relationship, David introduced me to the world of hiking. I grew up in Shanghai - a city that’s much bigger than New York and very much urbanized everywhere, so I did not really know nature or appreciate nature. But together, we hiked in almost every national park on the west coast, a few on the east coast, and I was introduced to a new world that I never knew existed, did things that I never thought I could do. And I’m so looking forward to many more adventures together as husband and wife!</p>
+
+      <p className="our-story__credit">Photos by Illya Filshtinsky</p>
+
+      <Link className="app-button app-button--wide app-button--link" to="/">Back to Home</Link>
     </div>
   </div>
 );
