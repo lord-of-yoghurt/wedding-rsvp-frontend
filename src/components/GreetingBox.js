@@ -23,16 +23,17 @@ const GreetingBox = () => (
         <img className="box-layout__img show-for-mobile" src="/images/divider-1_2.png" />
         <h3>Info and Updates</h3>
         <p>
-          Detailed directions are available <a target="_blank" href="https://goo.gl/JPTVCZ">here</a>.
+          Detailed directions <br />are available <a target="_blank" href="https://goo.gl/JPTVCZ">here</a>.
         </p>
         <p></p>
         <p>
-          The menu is now available! Click&nbsp;
+          The menu is now available! <br />Click&nbsp;
           <a target="_blank" href="https://goo.gl/4H5HRU">here</a>
           &nbsp;to check it out.
         </p>
         <img className="box-layout__img" src="/images/divider-1_2.png" />
         <p>
+          Click below to see our registry!
           <a target="_blank" href="https://www.zola.com/registry/davidhaodong">
             <img className="box-layout__img" src="/images/zola-logo-blue.png" />
           </a>
@@ -41,6 +42,12 @@ const GreetingBox = () => (
     </div>
     <p className="box-subtitle">We look forward to sharing this special day with you!</p>
     <div>
+      <Link
+        className="app-button app-button--wide app-button--link app-button--ourstory"
+        to="/ourstory"
+      >
+        Our Story
+      </Link>
       <Link className="app-button app-button--wide app-button--link" to="/rsvp">RSVP</Link>
     </div>
   </div>

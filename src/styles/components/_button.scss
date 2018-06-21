@@ -17,6 +17,7 @@
   background-color: #b54249;
   text-align: center;
   padding-top: 1.5rem;
+  margin-bottom: 0;
 }
 
 .app-button--wide {
@@ -35,4 +36,9 @@
 .app-button--submit {
   @extend .app-button--wide;
   background-color: $dark-blue;
+}
+
+.app-button--ourstory {
+  margin-bottom: $m-size;
+  background-color: #627e7c;
 }
